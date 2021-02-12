@@ -13,7 +13,7 @@
 1. Early return, early exit
     
     함수 내에서 if문이 존재할 때, 조건이 맞지 않는 경우
-    Early return하여 최적화를 기대.
+    `Early return`하여 최적화를 기대.
     ~~~javascript
     function upgradeUser(user) {
         if (user.point <= 10) {
