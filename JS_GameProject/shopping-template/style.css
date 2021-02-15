@@ -6,8 +6,107 @@
   --color-yellow: #fbbe28;
   --color-pink: #fd7f84;
   --color-light-grey: #dfdfdf;
+
+  /* size */
+  --base-space: 8px;
+  --size-button: 60px;
+  --font-size: 18px;
+  --size-border: 4px;
+  --size-thumbnail: 50px;
+
+  /* animation */
+  --animation-duration: 300ms;
 }
 
 * {
   box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: var(--color-black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    cursor: pointer;
+    transition: transform var(--animation-duration) ease;
+}
+
+
+.buttons {
+    display: flex;
+    align-items: center;
+
+}
+
+.btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: transform var(--animation-duration) ease;
+    margin-right: var(--base-space);
+}
+
+.btn:hover,
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.imgBtn {
+    width: var(--size-button);
+    height: var(--size-button);
+}
+
+.colorBtn {
+    font-size: var(--font-size);
+    padding: calc(var(--base-space)*2);
+    border-radius: var(--size-border);
+}
+.blue {
+    background: var(--color-blue);
+}
+.yellow {
+    background: var(--color-yellow);
+}
+.pink {
+    background: var(--color-pink);
+}
+
+
+/* itmes */
+.items {
+    width: 60%;
+    height: 60%;
+    list-style: none;
+    padding-left: 0;
+    overflow-y: scroll;
+    
+}
+/* // 스크롤바 디자인 공부 ㄱㄱ */
+.item {
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    padding: var(--base-space);
+    border-bottom: var(--color-light-grey) solid 1px;
+
+}
+.item:first-child{
+    border-radius: var(--size-border) var(--size-border) 0 0;
+}
+.item:last-child {
+    border-radius: 0 0 var(--size-border) var(--size-border);
+}
+.item_thumbnail {
+    width: var(--size-thumbnail);
+    height: var(--size-thumbnail);
+}
+.item_description {
+    margin-left: var(--base-space);
+    font-size: var(--font-size);
 }
