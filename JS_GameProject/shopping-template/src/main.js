@@ -21,33 +21,8 @@ function displayItems_(items) {
 }
 
 // 이 함수는 각 li를 생성해서 ul에 child로 붙이기 때문에 refresh가 힘듦
-function createLiFromItem(itemOfData) {
-    const li = document.createElement("li");
-    li.className = "item";
 
-    const img = document.createElement("img");
-    img.src = `img/${itemOfData.color}_${itemOfData.type.charAt(0)}.png`;
-    img.alt = itemOfData.type;
-    img.className = "item_thumbnail";
-
-    const span = document.createElement("span");
-    span.className = "item_description";
-    span.innerText = `${itemOfData.gender}, ${itemOfData.size}`;
-
-    li.appendChild(img);
-    li.appendChild(span);
-
-    return li;
-}
-
-function displayItems(items) {
-    const itemUl = document.querySelector(".items");
-
-    // 작동함 ㅇㅋ
-    for (const clothes of items) {
-        itemUl.appendChild(createLiFromItem(clothes));
-    }
-}
+//그래서 함수 두개 지움 ㅇㅇ
 
 function filterData(items, dataset) {
     const result = items.filter((item) => item[dataset.key] === dataset.value);
@@ -72,35 +47,8 @@ function setEventListener(items) {
 
     logo.addEventListener("click", () => displayItems_(items));
     btns.addEventListener("click", (event) => onBtnClick(event, items));
-    // btns.addEventListener("click", (event) => {
-    //     const dataset = event.target.dataset;
-    //     const key = dataset.key;
-    //     const value = dataset.value;
-
-    //     const button = { key, value };
-    //     if (button.key === "type") {
-    //         const result = fillterByType(items, button.value);
-    //         displayItems_(result);
-    //     } else if (button.key === "color") {
-    //         const result = filterByColor(items, button.value);
-    //         displayItems_(result);
-    //     }
-    // });
+    
 }
-
-// const returnPromise = promise.then((button) => {
-//     return new Promise((resolve, reject) => {
-//         if (button.key === "type") {
-//             const result = fillterByType(items, button.value);
-//             resolve(result);
-//         } else if (button.key === "color") {
-//             const result = filterByColor(items, button.value);
-//             resolve(result);
-//         }
-//     });
-// });
-// console.log(returnpromise);
-// return returnPromise;
 
 //main
 loadItems()
