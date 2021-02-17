@@ -16,8 +16,8 @@ function createLiInHTML(item) {
     `;
 }
 function displayItems_(items) {
-    const container = document.querySelector('.items');
-    container.innerHTML = items.map(item => createLiInHTML(item)).join('');
+    const container = document.querySelector(".items");
+    container.innerHTML = items.map((item) => createLiInHTML(item)).join("");
 }
 
 // 이 함수는 각 li를 생성해서 ul에 child로 붙이기 때문에 refresh가 힘듦
@@ -49,24 +49,58 @@ function displayItems(items) {
     }
 }
 
-function filterByColor(items, colorForFilter) {
-    const result = items.filter(item => item.color === colorForFilter);
+function filterData(items, dataset) {
+    const result = items.filter((item) => item[dataset.key] === dataset.value);
     return result;
 }
-function fillterByType(itmes, typeForFilter) {
-    const result = items.filter(item => item.type === typeForFilter);
-    return result;
+
+function onBtnClick(event, items) {
+    const dataset = event.target.dataset;
+    const key = dataset.key;
+    const value = dataset.value;
+
+    if (key === undefined || value === undefined) {
+        return;
+    }
+
+    displayItems_(filterData(items, dataset));
 }
 
 function setEventListener(items) {
-    const logo =document.querySelector(".logo");
-    const btn = document.querySelector(".blue");
-    logo.addEventListener("click", () => displayItems_(items));
-    btn.addEventListener("click", function(){
-        displayItems_(filterByColor(items, "blue"));
-    });
+    const logo = document.querySelector(".logo");
+    const btns = document.querySelector(".buttons");
 
+    logo.addEventListener("click", () => displayItems_(items));
+    btns.addEventListener("click", (event) => onBtnClick(event, items));
+    // btns.addEventListener("click", (event) => {
+    //     const dataset = event.target.dataset;
+    //     const key = dataset.key;
+    //     const value = dataset.value;
+
+    //     const button = { key, value };
+    //     if (button.key === "type") {
+    //         const result = fillterByType(items, button.value);
+    //         displayItems_(result);
+    //     } else if (button.key === "color") {
+    //         const result = filterByColor(items, button.value);
+    //         displayItems_(result);
+    //     }
+    // });
 }
+
+// const returnPromise = promise.then((button) => {
+//     return new Promise((resolve, reject) => {
+//         if (button.key === "type") {
+//             const result = fillterByType(items, button.value);
+//             resolve(result);
+//         } else if (button.key === "color") {
+//             const result = filterByColor(items, button.value);
+//             resolve(result);
+//         }
+//     });
+// });
+// console.log(returnpromise);
+// return returnPromise;
 
 //main
 loadItems()
