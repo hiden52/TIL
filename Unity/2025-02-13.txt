@@ -1,0 +1,18 @@
+## 버전 시멘틱
+(메이저).(마이너).~~
+2022.3.14f1
+
+Unity naming convention
+    - directory 
+        주로 복수형으로
+
+Inspector
+    info , attributes of Object
+
+isometric
+
+
+## Design Pattern
+Component pattern
+    - 컴포넌트의 삽입 삭제에 용이
+
