@@ -16,3 +16,49 @@ isometric
 Component pattern
     - 컴포넌트의 삽입 삭제에 용이
 
+
+
+# 2025.02.17
+
+## 렌더링 파이프라인
+    - Local Space
+        3D 모델 자체의 공간
+    - World Space
+        게임/secene 내부의 공간?
+    - View Space
+        카메라
+
+    Screen Space vs World Space
+
+## Canvas 
+    - UI 배치를 위한
+    - screen space?
+
+    pivot - 좌하단 (0, 0)
+            우상단 (1, 1)
+    Image 컴포넌트
+        image source - 2d sprite!
+    
+    (Vertical) Layout Group -Component
+
+
+
+## EventSystem
+    UI 상호작용 
+      ex) 버튼 클릭
+
+
+## Script vs Inspector
+    public -> Inspector에서 접근 가능
+    변수의 값 - Inspector 우선
+
+
+## C# 의 컴파일 (JIT)
+    C# script - IL언어 - .dll
+                .NET
+
+
+
+    
+
+
