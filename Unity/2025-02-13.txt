@@ -56,6 +56,32 @@ Component pattern
 ## C# 의 컴파일 (JIT)
     C# script - IL언어 - .dll
                 .NET
+    ### C/C++과의 차이점
+
+
+# 2025.02.18
+
+## Prefab
+    - 참조
+    - flyweight pattern
+    
+    - 경우에 따라 참조 해제도 가능
+      (프리팹 해제?)
+    
+## 월드 내에 UI 추가하기
+    ### 오브젝트 이름 UI
+        - 오브젝트 자식으로 Canvas
+          - 이때 캔버스의 스케일을 작게 설정해야함
+          ex) 0.01
+
+
+TextMeshProUGUI -> using TMPro;
+
+(자기자신) =  GetComponent<자기자신>();
+이 코드로 Inspector에서 일일이 오브젝트 자기 자신을 넣을 필요가 없어짐
+만약, 이 코드 없이 Inspector를 조작하지 않고 실행할 경우 NullReferencing? 오류 발생
+
+    
 
 
 
