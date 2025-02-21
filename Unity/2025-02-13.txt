@@ -82,7 +82,7 @@ TextMeshProUGUI -> using TMPro;
 만약, 이 코드 없이 Inspector를 조작하지 않고 실행할 경우 NullReferencing? 오류 발생
 
     
-
+# 2025.02.18
 
 
     
